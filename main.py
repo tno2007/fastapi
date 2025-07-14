@@ -36,4 +36,4 @@ async def scrape_endpoint(request: ScrapeRequest):
     
 @app.get("/apis/scraper")
 async def scraper_hello():
-    return {"message": "Hello World from /apis/scraper"}
+    return {"message": "Hello World from /apis/scraper!!!"}
