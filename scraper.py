@@ -11,7 +11,9 @@ def scrape_and_save(url: str, filename: str = "") -> str:
     """
     download_dir = "downloads"
     os.makedirs(download_dir, exist_ok=True)
-    scraper = cloudscraper.create_scraper()
+    scraper = cloudscraper.create_scraper(
+        delay=5,   
+    )
     response = scraper.get(url)
     if not filename:
         now = datetime.now()
