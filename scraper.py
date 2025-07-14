@@ -9,7 +9,7 @@ def scrape_and_save(url: str, filename: str = "") -> str:
     If filename is not provided or empty, generate a filename using the current date and time.
     Returns the filename the response was saved to.
     """
-    download_dir = "download"
+    download_dir = "downloads"
     os.makedirs(download_dir, exist_ok=True)
     scraper = cloudscraper.create_scraper()
     response = scraper.get(url)

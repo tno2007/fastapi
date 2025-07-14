@@ -1,7 +1,7 @@
 from typing import Union
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from modules.scraper import scrape_and_save, read_file_contents
+from scraper import scrape_and_save, read_file_contents
 
 app = FastAPI()
 
@@ -33,3 +33,7 @@ async def scrape_endpoint(request: ScrapeRequest):
         return ScrapeResponse(url=request.url, html=html)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+@app.get("/apis/scraper")
+async def scraper_hello():
+    return {"message": "Hello World from /apis/scraper"}
